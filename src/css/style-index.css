@@ -1,0 +1,57 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto+Mono&display=swap");
+.hits-header, .news-list h3, .welcome h5, .welcome h1 {
+  color: #ff00aa;
+  text-transform: uppercase;
+  text-align: center;
+  font-family: "Roboto Mono", monospace;
+}
+
+p {
+  color: #00ccff;
+  text-align: justify;
+  font-size: 12pt;
+  font-family: "Roboto Mono", monospace;
+}
+
+main {
+  max-width: 1080px;
+  margin: 0 auto;
+  background-color: #1f0047ce;
+  padding: 5em;
+  border-radius: 200px;
+}
+
+.welcome {
+  margin-top: -3em;
+}
+.news-wrapper {
+  margin-top: 2.4em;
+}
+
+.news-list li:hover {
+  -webkit-transform: scale(1.12, 1.12);
+  -ms-transform: scale(1.12, 1.12);
+  transform: scale(1.12, 1.12);
+  transition: transform 0.2s;
+  color: #ff00aa;
+}
+
+.top-hits-wrapper {
+  margin-top: 2em;
+}
+
+.song-cover {
+  width: 90%;
+  margin: 1em;
+  border-radius: 500px;
+  border: solid 2pt white;
+}
+.song-cover:hover {
+  -webkit-transform: scale(1.1);
+  -ms-transform: scale(1.1);
+  transform: scale(1.1);
+  transition: transform 0.2s;
+  border: solid 2pt #ff00aa;
+}
+
+/*# sourceMappingURL=style-index.css.map */

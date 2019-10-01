@@ -1,0 +1,45 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto+Mono&display=swap');
+
+.nav-item {
+    font-family: 'Roboto Mono', monospace;
+    margin: 0 auto;
+    padding: 3em 1em;
+    text-align: center;
+}
+
+.nav-item a {
+    color:#fff !important;
+    color: #FFF;
+    text-decoration: none;
+    font: 16pt Century Gothic;
+    margin: 0px 10px;
+    padding: 10px 10px;
+    position: relative;
+    z-index: 0;
+}
+
+/* Top & Bottom Borders Out */
+.topBotomBordersOut a:before, .topBotomBordersOut a:after {
+    position: absolute;
+    left: 0px;
+    width: 100%;
+    height: 2px;
+    background: rgb(255, 0, 234);
+    content:"";
+    opacity: 0;
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
+}
+
+.topBotomBordersOut a:before {
+    top: 0px;
+    transform: translateY(10px);
+}
+.topBotomBordersOut a:after {
+    bottom: 0px;
+    transform: translateY(-10px);
+}
+.topBotomBordersOut a:hover:before, .topBotomBordersOut a:hover:after {
+    opacity: 1;
+    transform: translateY(0px);
+}
