@@ -27,9 +27,7 @@ function watchTask() {
     parallel(copyHTML, copyMedia, jsTask, cssCombine));
 }
 
-
 //---------------- GULP TASKS ----------------//
-
 // Task: kopiera HTML
 function copyHTML() {
     return src(files.htmlPath)
@@ -71,7 +69,8 @@ function cssCombine() {
 
 // Huvudkommandot 'Gulp' sätter igång samtliga funktioner 
 // Funktionen 'watchTask' spårar alla ändringar och håller live-filen uppdaterad
-exports.default = series(
+
+export default series(
     parallel(copyHTML, copyMedia, jsTask, cssCombine),
     watchTask
 );
