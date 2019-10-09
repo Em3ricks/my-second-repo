@@ -1,4 +1,4 @@
-# Webbutveckling III - Moment 4 ECMAScript och TypeScript
+# Webbutveckling III - Moment 4, ECMAScript och TypeScript
 
 För att utveckla med TypeScript har jag använta Visual Studio Code vilken är samma programvara jag nyttjat för samtliga föregående projekt. Men innan jag kan börja använda programmet måste jag först installera det i min arbetsmiljö och detta görs med följande kommando:
 
