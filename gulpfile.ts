@@ -2,16 +2,16 @@
 declare function require(path: string): any;
 
 // Variabler
-const {src, dest, watch, series, parallel} = require("gulp");
+const { src, dest, watch, series, parallel} = require("gulp");
 const concat = require("gulp-concat");
-const uglify = require ("gulp-uglify-es").default;
+const uglify = require("gulp-uglify-es").default;
 const concatCss = require("gulp-concat-css");
 const cleanCSS = require('gulp-clean-css');
 
 // Sökvägar
 const files = {
     htmlPath: "src/**/*.html",
-    jsPath: "src/**/*.js", 
+    jsPath: "src/**/*.js",
     cssPath: "src/css/**/*.css",
     mediaPath: "src/media/*"
 }
@@ -19,12 +19,12 @@ const files = {
 // Task: watcher
 function watchTask() {
     watch([
-    files.htmlPath,
-    files.jsPath, 
-    files.cssPath,
-    files.mediaPath
-], 
-    parallel(copyHTML, copyMedia, jsTask, cssCombine));
+        files.htmlPath,
+        files.jsPath,
+        files.cssPath,
+        files.mediaPath
+    ],
+        parallel(copyHTML, copyMedia, jsTask, cssCombine));
 }
 
 //---------------- GULP TASKS ----------------//
@@ -33,7 +33,7 @@ function copyHTML() {
     return src(files.htmlPath)
         // Skickar filerna till mapp med namn "pub"
         .pipe(dest("pub")
-    );
+        );
 }
 
 // Task: kopiera bilder
@@ -41,7 +41,7 @@ function copyMedia() {
     return src(files.mediaPath)
         // Skickar filerna till mapp med namn "pub/media"
         .pipe(dest("pub/css/media")
-    );
+        );
 }
 
 // Task: Sammanslå och minifiera js-filer
@@ -53,18 +53,18 @@ function jsTask() {
         .pipe(uglify())
         // Skickar filen till "pub/js"
         .pipe(dest('pub/js')
-    );
+        );
 }
 
 // Task: Sammanslå CSS-filer
 function cssCombine() {
     return src(files.cssPath)
         //Sammanslår all css till "main.css"
-      .pipe(concatCss("main.css"))
+        .pipe(concatCss("main.css"))
         // Minifierar CSS-fil
-      .pipe(cleanCSS({compatibility:'ie8'}))
+        .pipe(cleanCSS({ compatibility: 'ie8' }))
         //Skickar sammanslagen fil till "pub/css"
-      .pipe(dest('pub/css'));
+        .pipe(dest('pub/css'));
 }
 
 // Huvudkommandot 'Gulp' sätter igång samtliga funktioner 
@@ -79,3 +79,6 @@ export default series(
 // Bör implementeras i en funktion!!
 
 // sass --watch src/sass/style2.scss:src/css/style-index2.css
+
+
+

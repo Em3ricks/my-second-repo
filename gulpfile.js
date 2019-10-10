@@ -55,9 +55,16 @@ function cssCombine() {
         //Skickar sammanslagen fil till "pub/css"
         .pipe(dest('pub/css'));
 }
-// Huvudkommandot 'Gulp' sätter igång samtliga funktioner 
-// Funktionen 'watchTask' spårar alla ändringar och håller live-filen uppdaterad
+
+/* Huvudkommandot 'Gulp' sätter igång samtliga funktioner 
+Funktionen 'watchTask' spårar alla ändringar och håller live-filen uppdaterad */
 exports.default = series(parallel(copyHTML, copyMedia, jsTask, cssCombine), watchTask);
-// Kommando för att övervaka och flytta ändringar från sass-fil till css
-// Bör implementeras i en funktion!!
-// sass --watch src/sass/style2.scss:src/css/style-index2.css
+
+
+/*____________________________________________________________________
+Kommando för att övervaka och flytta ändringar från sass-fil till css:
+sass --watch src/sass/style2.scss:src/css/style-index2.css
+
+Kommando för att konvertera senare version av ES med Babel:
+npm run build
+_____________________________________________________________________*/
