@@ -19,6 +19,14 @@ Med korrekt inställningar måste jag skapa en konfigurationsfil för att välja
 inställningar som ska användas när jag slutligen använder mitt Babel-kommando.
 Denna fil kan genereras automatiskt men då den bara ska innehålla en inställning
 skapar jag den för hand och döper den till **config.babelrc**.
-Väl i denna fil
+Väl i denna fil väljer jag sedan paketet som jag beskrev i föregående steg, se bild:
 
-![Alt Text](url)
+![babel config](http://studenter.miun.se/~joem1800/webbutveckling%203/moment4/babel.jpg)
+
+Sedan för att underlätta skapade jag mitt script för att kalla på funktionen i min package.json-fil
+som redan var skapad för tidigare laborationer, se bild: 
+
+![babel funktion](http://studenter.miun.se/~joem1800/webbutveckling%203/moment4/babel2.jpg)
+
+Nu återstår bara att kalla på kommandot med **npm run build** vilket resulterar i konvertering av
+min JavaScript där filerna hamnar i en ny mapp vid namn "build" i min publiceringskatalog. 
