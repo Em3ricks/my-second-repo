@@ -30,3 +30,9 @@ som redan var skapad för tidigare laborationer, se bild:
 
 Nu återstår bara att kalla på kommandot med **npm run build** vilket resulterar i konvertering av
 min JavaScript där filerna hamnar i en ny mapp vid namn "build" i min publiceringskatalog. 
+
+**RE**
+För lite smidigare aktivering av funktionen (och för att faktiskt göra som uppgiftsbeskrivningen sa att man skulle)
+infogade jag nu denna funktion i mitt gulp-script så att det körs löpande vid aktivering av mitt huvudkommando "gulp".
+
+![babel funktion/gulpfilen](http://studenter.miun.se/~joem1800/webbutveckling%203/moment4/babel3.jpg)
