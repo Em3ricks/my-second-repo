@@ -1,1 +1,1 @@
-console.log("Hallå från 1 copy js"),$(function(){var n=$("h1").eq(0),l=n.text(),o="";for(i=0;i<l.length;i++)o+="<span>"+l[i]+"</span>";n.html(o)});
+hello=(()=>"Hello World!"),$(function(){var l=$("h1").eq(0),e=l.text(),n="";for(i=0;i<e.length;i++)n+="<span>"+e[i]+"</span>";l.html(n)});

@@ -2,11 +2,13 @@
 declare function require(path: string): any;
 
 // Variabler
-const { src, dest, watch, series, parallel} = require("gulp");
+const { src, dest, watch, series, parallel, gulp } = require("gulp");
 const concat = require("gulp-concat");
 const uglify = require("gulp-uglify-es").default;
 const concatCss = require("gulp-concat-css");
 const cleanCSS = require('gulp-clean-css');
+const babel = require("gulp-babel");
+
 
 // Sökvägar
 const files = {
@@ -70,15 +72,25 @@ function cssCombine() {
 // Huvudkommandot 'Gulp' sätter igång samtliga funktioner 
 // Funktionen 'watchTask' spårar alla ändringar och håller live-filen uppdaterad
 
+function babelTask() {
+    return src("src/**/*.js")
+        .pipe(babel())
+        .pipe(dest("pub/js-legacy"));
+}
+
 export default series(
-    parallel(copyHTML, copyMedia, jsTask, cssCombine),
+    parallel(copyHTML, copyMedia, jsTask, cssCombine, babelTask),
     watchTask
 );
 
-// Kommando för att övervaka och flytta ändringar från sass-fil till css
-// Bör implementeras i en funktion!!
+/*____________________________________________________________________
+Kommando för att övervaka och flytta ändringar från sass-fil till css:
+sass --watch src/sass/style2.scss:src/css/style-index2.css
 
-// sass --watch src/sass/style2.scss:src/css/style-index2.css
+Kommando för att konvertera senare version av ES med Babel:
+npm run build
+_____________________________________________________________________*/
+
 
 
 
